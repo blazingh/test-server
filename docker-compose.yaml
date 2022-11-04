@@ -1,0 +1,59 @@
+version: '3'
+services: 
+
+# nginx server for routing and dns
+  nginx:
+    image: nginx:latest
+    restart: always
+    container_name: nginx-ingress
+    volumes:
+        - "./.nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    ports:
+        - "3000:3000"
+
+  mysql:    
+    image: mysql:8
+    restart: always
+    expose:
+      - '3306'
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  redis:
+    image: redis:7.0.5-alpine
+    container_name: myapp-redis
+    ports:
+      - "6379:6379" 
+    command: redis-server --appendonly yes --requirepass "${REDIS_PASSWORD}"
+    volumes:
+    - ./storage/redis:/data
+
+# main
+  client-main:
+    container_name: client-main
+    build:
+      context: ./client-main/
+      dockerfile: .docker/Dockerfile
+    volumes:
+      - ./client-main:/var/www/client/
+      - /var/www/client/node_modules
+      - /var/www/client/.next
+    env_file:
+    - servicehosts.env
+
+# test1
+  service-test1:
+    container_name: service-test1
+    build:
+      context: ./service-test1/
+      dockerfile: .docker/Dockerfile
+    volumes:
+      - ./service-test1:/var/www/html/
+      - /var/www/html/vendor
+    env_file:
+    - servicehosts.env
