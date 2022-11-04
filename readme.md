@@ -7,7 +7,6 @@ before you clone the repository make sure you have **docker desktop** or **docke
 
 ## SETUP
 
-<hr/>
 
 1. Clone the repository
 
@@ -36,7 +35,6 @@ before you clone the repository make sure you have **docker desktop** or **docke
 
 ## where are the source files ?
 
-<hr/>
 
 each service has its own source folder in the root directory with the name scheme of **[service-name].env**
 
@@ -51,7 +49,6 @@ examples :
 
 ## where are the environment variables ?
 
-<hr/>
 
 each service has its .env file in the env_files directory
 
@@ -66,7 +63,6 @@ examples:
 
 ## How to connect to redis and mysql database ?
 
-<hr/>
 
 the credentials can be found in the route .env file **./.env**
 
