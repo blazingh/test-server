@@ -2,7 +2,12 @@
 
 before you clone the repository make sure you have **docker desktop** or **docker** and **docker compose** installed on your system. see how in [get docker](https://docs.docker.com/get-docker/)
 
+<br>
+<br>
+
 ## SETUP
+
+<hr/>
 
 1. Clone the repository
 
@@ -20,13 +25,18 @@ before you clone the repository make sure you have **docker desktop** or **docke
 
 > &ensp;&thinsp; `docker-compose up --detach`
 
-<br>**"note:"**
+<br>**" note : "**
 
-- to stop the container : `docker-compose down`
+- to stop the container => `docker-compose down`
 
-- to start it again in detached mode : `docker-compose up --detach`
+- to start it again in detached mode => `docker-compose up --detach`
+
+<br>
+<br>
 
 ## where are the source files ?
+
+<hr/>
 
 each service has its own source folder in the root directory with the name scheme of **[service-name].env**
 
@@ -36,7 +46,12 @@ examples :
 
 - a service named **service-auth** will have its source files in **./service-auth**
 
+<br>
+<br>
+
 ## where are the environment variables ?
+
+<hr/>
 
 each service has its .env file in the env_files directory
 
@@ -46,7 +61,12 @@ examples:
 
 - a service named **service-auth** will have its own environment variables in **./env_files/service-auth.env**
 
+<br>
+<br>
+
 ## How to connect to redis and mysql database ?
+
+<hr/>
 
 the credentials can be found in the route .env file **./.env**
 

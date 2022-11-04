@@ -45,6 +45,7 @@ services:
       - /var/www/client/.next
     env_file:
     - servicehosts.env
+    - ./env_files/client-main.env
 
 # test1
   service-test1:
@@ -57,3 +58,4 @@ services:
       - /var/www/html/vendor
     env_file:
     - servicehosts.env
+    - ./env_files/service-test1.env
