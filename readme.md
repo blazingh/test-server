@@ -62,7 +62,7 @@ docker-compose stop "service-name"
 
 ## where are the source files ?
 
-each service has its own source folder in the root directory with the name scheme of **[service-name].env**
+each service has its own source folder in the root directory with the name scheme of **./[service-name]**
 
 examples :
 
