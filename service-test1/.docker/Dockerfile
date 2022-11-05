@@ -6,12 +6,15 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 
 RUN apk add --no-cache pcre-dev $PHPIZE_DEPS \
     && pecl install redis \
-    && docker-php-ext-enable redis.so
+    && docker-php-ext-enable redis.so \
+    && docker-php-ext-install mysqli pdo pdo_mysql 
 
-COPY . .
+COPY composer.json composer.lock ./
 
 RUN composer install
 
+COPY . .
+
 EXPOSE 8000
 
-CMD  php -S 0.0.0.0:8000 -t public
+CMD  php -S 0.0.0.0:8000 -t public 
