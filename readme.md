@@ -46,6 +46,18 @@ to start it again in detached mode
 docker-compose up --detach
 ```
 
+to start only one service
+
+```bash
+docker-compose up --detach "service-name"
+```
+
+to stop only one service
+
+```bash
+docker-compose stop "service-name"
+```
+
 <br><br>
 
 ## where are the source files ?
@@ -105,3 +117,21 @@ examples _( in the [service-name].env )_ :
 - MYSQL_HOST=mysql
 
 - REDIS_HOST=redis
+
+<br><br>
+
+## how to run a executable command in a service ?
+
+to run a commmand in a service you can use **docker compose exec** follwed by the service name and the command
+
+```bash
+docker compose exec "service-name" "command"
+```
+
+examples:
+
+- runing a `php artisan migrate` command in **service-auth**
+
+```bash
+docker compose exec service-auth php artisan migrate
+```
