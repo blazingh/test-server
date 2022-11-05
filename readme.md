@@ -4,84 +4,46 @@ before you clone the repository make sure you have **docker desktop** or **docke
 
 run `docker -v` and `docker-compose -v` to make sure you have them installed
 
-<br>
-
-<br>
+<br><br>
 
 ## SETUP
 
 1. Clone the repository
 
 ```bash
-
-
-
 git clone https://github.com/distedavim/distedavim_server.git
-
-
-
 ```
 
 2. go inside the repository directory
 
 ```bash
-
-
-
 cd distedavim_server
-
-
-
 ```
 
 3. Build the docker-compose container
 
 ```bash
-
-
-
 docker-compose build
-
-
-
 ```
 
 4. start the docker-compose container in detached mode
 
 ```bash
-
-
-
 docker-compose up --detach
-
-
-
 ```
 
 <br>**" NOTES : "**
 
 to stop the container
 
-```
-
-
-
-bash docker-compose down
-
-
-
+```bash
+docker-compose down
 ```
 
 to start it again in detached mode
 
 ```bash
-
-
-
 docker-compose up --detach
-
-
-
 ```
 
 <br><br>
@@ -106,7 +68,9 @@ examples:
 
 - a service named **client-main** will have its own environment variables in **./env_files/client-main.env**
 
-- a service named **service-auth** will have its own environment variables in **./env_files/service-auth.env**<br><br>
+- a service named **service-auth** will have its own environment variables in **./env_files/service-auth.env**
+
+<br><br>
 
 ## How to access a service from another service ?
 
@@ -127,6 +91,8 @@ examples :
 ```javascript
 fetch(`${SERVICE_AUTH}/login`);
 ```
+
+<br><br>
 
 ## How to connect to redis and mysql database ?
 
