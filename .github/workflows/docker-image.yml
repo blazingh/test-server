@@ -1,12 +1,12 @@
 name: Docker Image CI
 
 on:
+
   push:
-    branches: [ "main" ]
-    paths: ["clinet-main"]
-  pull_request:
-    branches: [ "main" ]
-    paths: ["clinet-main"]
+    branches:
+    - main
+    paths:
+    - client-main
 
 jobs:
 
