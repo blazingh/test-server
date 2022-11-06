@@ -23,9 +23,15 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  adminer:
-    image: adminer:4
+  phpmyadmin:
+    image: phpmyadmin:5.2.0
     restart: always
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
 
   redis:
     image: redis:7.0.5-alpine

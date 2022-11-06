@@ -60,6 +60,16 @@ docker-compose stop "service-name"
 
 <br><br>
 
+## SERVICES
+
+**the main client** service can be accessed at `http://localhost:3000`
+
+**phpMyAdmin** service can be accessed at `http://localhost:8080`
+
+the rest of the micro services can be accessed at `http://localhost:3000/"service-name"`
+
+<br><br>
+
 ## where are the source files ?
 
 each service has its own source folder in the root directory with the name scheme of **./[service-name]**
