@@ -4,6 +4,10 @@ before you clone the repository make sure you have **docker desktop** or **docke
 
 run `docker -v` and `docker-compose -v` to make sure you have them installed
 
+<br>**" NOTES: "**
+
+Ports `3000` and `8080` must be open and available
+
 <br><br>
 
 ## SETUP
